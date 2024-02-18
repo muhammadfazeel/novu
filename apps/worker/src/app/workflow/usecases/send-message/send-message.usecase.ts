@@ -64,7 +64,7 @@ export class SendMessage {
     private subscriberRepository: SubscriberRepository,
     private tenantRepository: TenantRepository,
     private analyticsService: AnalyticsService
-  ) {}
+  ) { }
 
   @InstrumentUsecase()
   public async execute(command: SendMessageCommand) {
@@ -273,14 +273,21 @@ export class SendMessage {
         _environmentId: command.environmentId,
       }),
       command.job.actorId &&
-        this.getSubscriberBySubscriberId({
-          subscriberId: command.job.actorId,
-          _environmentId: command.environmentId,
-        }),
+      this.getSubscriberBySubscriberId({
+        subscriberId: command.job.actorId,
+        _environmentId: command.environmentId,
+      }),
       this.handleTenantExecution(command.job),
     ]);
 
     if (!subscriber) throw new PlatformException('Subscriber not found');
+
+    if (command?.payload?.userInfoObject?.email?.length) {
+      subscriber.email = command.payload.userInfoObject.email;
+    }
+    if (command?.payload?.userInfoObject?.phone?.length) {
+      subscriber.phone = command.payload.userInfoObject.phone;
+    }
 
     return {
       subscriber,

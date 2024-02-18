@@ -21,8 +21,8 @@ import {
 import { CreateSubscriberRequestDto } from '../../subscribers/dtos';
 import { UpdateTenantRequestDto } from '../../tenant/dtos';
 
-export class SubscriberPayloadDto extends CreateSubscriberRequestDto {}
-export class TenantPayloadDto extends UpdateTenantRequestDto {}
+export class SubscriberPayloadDto extends CreateSubscriberRequestDto { }
+export class TenantPayloadDto extends UpdateTenantRequestDto { }
 
 export class TopicPayloadDto {
   @ApiProperty()
@@ -43,6 +43,7 @@ export class TriggerEventRequestDto {
   @IsString()
   @IsDefined()
   name: string;
+  email: string;
 
   @ApiProperty({
     description:

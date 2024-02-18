@@ -16,18 +16,18 @@ services:
       test: "bash -c 'AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test aws --endpoint-url=http://127.0.0.1:4566 s3 ls'"
       retries: 5
       interval: 10s
-  mongo:
-    container_name: "${MONGO_DOCKER_NAME-mongo_main}"
-    image: mongo
-    network_mode: bridge
-    ports:
-      - "27017:27017"
-    volumes:
-      - "${TMPDIR:-/tmp/mongo}:/db/data"
-    healthcheck:
-      test: "bash -c 'mongo --host 127.0.0.1:27017 --eval \"printjson(rs.status())\"'"
-      retries: 5
-      interval: 10s
+  # mongo:
+  #   container_name: "${MONGO_DOCKER_NAME-mongo_main}"
+  #   image: mongo
+  #   network_mode: bridge
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - "${TMPDIR:-/tmp/mongo}:/db/data"
+  #   healthcheck:
+  #     test: "bash -c 'mongo --host 127.0.0.1:27017 --eval \"printjson(rs.status())\"'"
+  #     retries: 5
+  #     interval: 10s
   redis:
     container_name: "${REDIS_DOCKER_NAME-redis_main}"
     image: redis

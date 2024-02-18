@@ -113,14 +113,14 @@ async function setupRunner() {
       });
       await waitPort({
         host: 'localhost',
-        port: 4200,
+        port: 4300,
       });
 
       // eslint-disable-next-line no-console
       console.log(`
         Everything is running 🎊
 
-        Web: http://127.0.0.1:4200
+        Web: http://127.0.0.1:4300
         Widget: http://127.0.0.1:4500
         API: http://127.0.0.1:3000
         Worker: http://127.0.0.1:3004
@@ -153,7 +153,7 @@ async function setupRunner() {
         console.log(`
           Everything is running 🎊
         
-          Web: http://127.0.0.1:4200
+          Web: http://127.0.0.1:4300
           API: http://127.0.0.1:3000
           WS: http://127.0.0.1:3002
           Worker: http://127.0.0.1:3004
@@ -226,7 +226,7 @@ async function setupRunner() {
 
       await waitPort({
         host: 'localhost',
-        port: 4200,
+        port: 4300,
       });
 
       if (answers.runWebConfiguration === RUN_CYPRESS_UI) {
