@@ -48,15 +48,20 @@ export class JobRepository extends BaseRepository<JobDBModel, JobEntity, Enforce
   }
 
   public async updateStatus(environmentId: string, jobId: string, status: JobStatusEnum): Promise<IUpdateResult> {
+    const setObject = {
+      status,
+    };
+    if (status === JobStatusEnum.COMPLETED || status === JobStatusEnum.FAILED) {
+      setObject['payload.userInfoObject'] = null;
+    }
+
     return this.MongooseModel.updateOne(
       {
         _environmentId: environmentId,
         _id: jobId,
       },
       {
-        $set: {
-          status,
-        },
+        $set: setObject,
       }
     );
   }
