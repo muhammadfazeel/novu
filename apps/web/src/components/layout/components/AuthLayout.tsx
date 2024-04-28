@@ -15,7 +15,7 @@ export default function AuthLayout({ children }: { children?: React.ReactNode })
             alt="logo"
             style={{ alignSelf: 'flex-start', maxWidth: 150, marginTop: 5, marginLeft: 5 }}
           />
-          <Box
+          {/* <Box
             sx={{
               position: 'absolute',
               right: '50%',
@@ -42,7 +42,7 @@ export default function AuthLayout({ children }: { children?: React.ReactNode })
               alt="logo"
               style={{ marginTop: -15, maxWidth: 400 }}
             />
-          </Box>{' '}
+          </Box>{' '} */}
         </div>
         {children}
       </div>

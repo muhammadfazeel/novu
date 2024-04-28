@@ -90,7 +90,7 @@ export function LoginForm({ email, invitationToken }: LoginFormProps) {
 
   return (
     <>
-      <OAuth />
+      {/* <OAuth /> */}
       <form noValidate onSubmit={handleSubmit(onLogin)}>
         <Input
           error={errors.email?.message || emailServerError}

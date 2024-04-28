@@ -20,7 +20,6 @@ import {
   Brand,
   Buildings,
   CheckCircleOutlined,
-  NovuLogo,
   Repeat,
   Settings,
   Team,
@@ -163,7 +162,7 @@ export function SideNav({}: Props) {
     >
       <Navbar.Section mb={24}>
         <Link to="/">
-          <NovuLogo />
+          <img src="/static/images/logo.png" alt="NEOM Logo" width="100" height="100" />
         </Link>
       </Navbar.Section>
       <Navbar.Section sx={{ overflowY: 'auto', flex: 1 }}>
@@ -203,7 +202,7 @@ export function SideNav({}: Props) {
         </Popover>
         <NavMenu menuItems={menuItems} />
         <OrganizationSelect />
-        <BottomNav dark={dark} data-test-id="side-nav-bottom-links">
+        {/* <BottomNav dark={dark} data-test-id="side-nav-bottom-links">
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -234,7 +233,7 @@ export function SideNav({}: Props) {
           >
             Share Feedback
           </a>
-        </BottomNav>
+        </BottomNav> */}
       </Navbar.Section>
     </Navbar>
   );
