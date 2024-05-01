@@ -55,11 +55,13 @@ export function AppLayout() {
               )}
             >
               <SpotLight>
+                <HeaderNav isIntercomOpened={isIntercomOpened} />
                 <AppShellNew>
                   <SideNav />
                   <ContentShell>
-                    <HeaderNav isIntercomOpened={isIntercomOpened} />
-                    <Outlet />
+                    <div className="outlet-wrapper">
+                      <Outlet />
+                    </div>
                   </ContentShell>
                 </AppShellNew>
               </SpotLight>

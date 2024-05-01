@@ -10,7 +10,7 @@ export const parameters = {
     container: DocsContainer,
   },
   darkMode: {
-    current: 'dark',
+    current: 'light',
   },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -24,7 +24,7 @@ export const parameters = {
 function ThemeWrapper(props) {
   return (
     <div style={{ margin: '3em' }}>
-      <ThemeProvider dark={useDarkMode()}>{props.children}</ThemeProvider>
+      <ThemeProvider dark={false}>{props.children}</ThemeProvider>
     </div>
   );
 }

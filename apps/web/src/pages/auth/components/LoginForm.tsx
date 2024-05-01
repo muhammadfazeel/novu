@@ -91,7 +91,7 @@ export function LoginForm({ email, invitationToken }: LoginFormProps) {
   return (
     <>
       {/* <OAuth /> */}
-      <form noValidate onSubmit={handleSubmit(onLogin)}>
+      <form noValidate onSubmit={handleSubmit(onLogin)} id="login-page">
         <Input
           error={errors.email?.message || emailServerError}
           {...register('email', {
@@ -118,7 +118,7 @@ export function LoginForm({ email, invitationToken }: LoginFormProps) {
         />
 
         <Link to={resetPasswordLink}>
-          <Text my={30} gradient align="center">
+          <Text my={30} color="black" align="center">
             Forgot Your Password?
           </Text>
         </Link>
@@ -134,11 +134,11 @@ export function LoginForm({ email, invitationToken }: LoginFormProps) {
           {invitationToken ? 'Sign In & Accept' : 'Sign In'}
         </Button>
         <Center mt={20}>
-          <Text mr={10} size="md" color={colors.B60}>
+          <Text mr={10} size="md" color="black">
             Don't have an account yet?
           </Text>
           <Link to={signupLink}>
-            <Text gradient>Sign Up</Text>
+            <Text color="black">Sign Up</Text>
           </Link>
         </Center>
       </form>

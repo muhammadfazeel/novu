@@ -43,7 +43,7 @@ export class EventsController {
     private sendTestEmail: SendTestEmail,
     private parseEventRequest: ParseEventRequest,
     private processBulkTriggerUsecase: ProcessBulkTrigger
-  ) { }
+  ) {}
 
   @ExternalApiAccessible()
   @UseGuards(UserAuthGuard)
@@ -61,27 +61,22 @@ export class EventsController {
     @UserSession() user: IJwtPayload,
     @Body() body: TriggerEventRequestDto
   ): Promise<TriggerEventResponseDto> {
-    console.log('-------------> ', body);
-
-    const abc = ParseEventRequestMulticastCommand.create({
-      userId: user._id,
-      environmentId: user.environmentId,
-      organizationId: user.organizationId,
-      identifier: body.name,
-      payload: body.payload || {},
-      overrides: body.overrides || {},
-      to: body.to,
-      actor: body.actor,
-      tenant: body.tenant,
-      transactionId: body.transactionId,
-      addressingType: AddressingTypeEnum.MULTICAST,
-      requestCategory: TriggerRequestCategoryEnum.SINGLE,
-    });
-
-    console.log('-------------> 1 ', abc);
-
-    const result = await this.parseEventRequest.execute(abc);
-    console.log('-------------> result ', result);
+    const result = await this.parseEventRequest.execute(
+      ParseEventRequestMulticastCommand.create({
+        userId: user._id,
+        environmentId: user.environmentId,
+        organizationId: user.organizationId,
+        identifier: body.name,
+        payload: body.payload || {},
+        overrides: body.overrides || {},
+        to: body.to,
+        actor: body.actor,
+        tenant: body.tenant,
+        transactionId: body.transactionId,
+        addressingType: AddressingTypeEnum.MULTICAST,
+        requestCategory: TriggerRequestCategoryEnum.SINGLE,
+      })
+    );
 
     return result as unknown as TriggerEventResponseDto;
   }

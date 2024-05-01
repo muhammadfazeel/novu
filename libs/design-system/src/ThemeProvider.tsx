@@ -62,28 +62,34 @@ declare module '@mantine/core' {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode | ReactNode[]; dark?: Boolean }) {
-  const preferredColorScheme = useColorScheme();
+  const preferredColorScheme = useColorScheme('light');
   const [colorScheme, setColorScheme] = useState<ColorScheme>(preferredColorScheme);
   const { themeStatus, setThemeStatus } = useLocalThemePreference();
 
   const toggleColorScheme = () => {
-    if (themeStatus === 'system') {
-      setThemeStatus('light');
-    } else if (themeStatus === 'light') {
-      setThemeStatus('dark');
-    } else {
-      setThemeStatus('system');
-    }
+    setThemeStatus('light');
+    /*
+     * if (themeStatus === 'system') {
+     *   setThemeStatus('light');
+     * } else if (themeStatus === 'light') {
+     *   setThemeStatus('dark');
+     * } else {
+     *   setThemeStatus('system');
+     * }
+     */
   };
 
   useEffect(() => {
-    if (themeStatus === 'system') {
-      setColorScheme(preferredColorScheme);
-    } else if (themeStatus === 'light') {
-      setColorScheme('light');
-    } else {
-      setColorScheme('dark');
-    }
+    setThemeStatus('light');
+    /*
+     * if (themeStatus === 'system') {
+     *   setColorScheme(preferredColorScheme);
+     * } else if (themeStatus === 'light') {
+     *   setColorScheme('light');
+     * } else {
+     *   setColorScheme('dark');
+     * }
+     */
   }, [themeStatus, preferredColorScheme]);
 
   return (
@@ -92,8 +98,10 @@ export function ThemeProvider({ children }: { children: ReactNode | ReactNode[];
         withGlobalStyles
         withNormalizeCSS
         theme={{
-          // Override any other properties from default theme
-          colorScheme,
+          /*
+           * Override any other properties from default theme
+           * colorScheme,
+           */
           ...mantineConfig,
           components: {
             Notification: {

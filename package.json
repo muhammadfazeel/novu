@@ -44,6 +44,7 @@
     "build:with-ee": "pnpm build && pnpm build-ee",
     "prebuild": "nx run-many --target=prebuild --all",
     "build:api": "nx build @novu/api",
+    "build:design-system": "nx build @novu/design-system",
     "build:worker": "nx build @novu/worker",
     "build:ws": "nx build @novu/ws",
     "build:webhook": "nx build @novu/webhook",

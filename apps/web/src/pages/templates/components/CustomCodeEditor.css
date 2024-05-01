@@ -96,3 +96,100 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+#login-page label,
+#login-page input {
+  color: #000;
+}
+#login-page input {
+  background-color: #fff !important;
+}
+button[type='submit'] {
+  background: #b89535;
+}
+.mantine-Navbar-root {
+  background-color: #fff;
+  box-shadow: rgb(204, 204, 204) 1px 3px 10px 0px;
+}
+/* .mantine-Navbar-root [data-test-id='side-nav-subscribers-link'],
+.mantine-Navbar-root [data-test-id='side-nav-subscribers-link']:hover {
+  background: #b89535;
+} */
+html {
+  color-scheme: light !important;
+}
+.mantine-Container-root {
+  /* background-color: #fff !important; */
+}
+.mantine-Table-root th,
+.mantine-Table-root td {
+  color: #000 !important;
+}
+.mantine-Table-root tr:hover {
+  background: rgba(184, 149, 53, 0.2) !important;
+}
+.mantine-SegmentedControl-active {
+  border-color: #b89535 !important;
+}
+.custom-style-nav [aria-current='page'],
+.custom-style-nav [aria-current='page']:before {
+  background: #b89535;
+  color: #fff;
+}
+.custom-style-nav .mantine-Badge-root,
+.mantine-Pagination-item[data-active],
+.mantine-Button-root2 {
+  background: #b89535;
+}
+.custom-style-nav .mantine-Badge-root {
+  width: 26px;
+  height: 26px;
+}
+.mantine-Button-label rect {
+  fill: #b89535;
+}
+.mantine-Button-label .mantine-Text-root {
+  color: #b89535;
+  -webkit-text-fill-color: unset !important;
+}
+.mantine-Text-root {
+  /* color: #b89535; */
+}
+.mantine-Tabs-tabLabel:after {
+  background: #b89535 !important;
+}
+[value='true'] + .mantine-Switch-track {
+  background: #b89535 !important ;
+}
+.mantine-Switch-input:checked ~ label {
+  background: #b89535 !important ;
+}
+.mantine-Switch-label {
+  color: #000 !important;
+}
+.outlet-wrapper {
+  background: #f5f5f9;
+  margin: 25px;
+}
+@media only screen and (max-width: 700px) {
+  .mantine-Navbar-root {
+    position: fixed;
+    left: -100%;
+    background: #fff;
+    height: 100vh;
+    transition: all 0.5s;
+    z-index: 9;
+  }
+}
+body {
+  overflow-y: auto !important;
+}
+
+.nav-button-custom > div {
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: #fff;
+  background: transparent;
+}
+.nav-button-custom path {
+  fill: #fff;
+}

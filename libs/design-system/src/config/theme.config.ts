@@ -3,12 +3,14 @@ import { colors, shadows } from '.';
 
 export const mantineConfig: MantineThemeOverride = {
   spacing: { xs: 15, sm: 20, md: 25, lg: 30, xl: 40 },
-  fontFamily: 'Lato, sans serif',
+  fontFamily: 'Arial',
   fontSizes: { xs: 10, sm: 12, md: 14, lg: 16, xl: 18 },
-  primaryColor: 'gradient',
+  // primaryColor: '#b89535',
   defaultGradient: { deg: 99, from: colors.gradientStart, to: colors.gradientEnd },
   radius: { md: 7, xl: 30 },
   lineHeight: '17px',
+  primaryColor: 'orange',
+  colorScheme: 'light',
   shadows: {
     sm: shadows.light,
     md: shadows.medium,

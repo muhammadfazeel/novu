@@ -161,9 +161,9 @@ export function SideNav({}: Props) {
       }}
     >
       <Navbar.Section mb={24}>
-        <Link to="/">
+        {/* <Link to="/">
           <img src="/static/images/logo.png" alt="NEOM Logo" width="100" height="100" />
-        </Link>
+        </Link> */}
       </Navbar.Section>
       <Navbar.Section sx={{ overflowY: 'auto', flex: 1 }}>
         <Popover
@@ -200,7 +200,9 @@ export function SideNav({}: Props) {
             </div>
           </Popover.Dropdown>
         </Popover>
-        <NavMenu menuItems={menuItems} />
+        <div className="custom-style-nav">
+          <NavMenu menuItems={menuItems} />
+        </div>
         <OrganizationSelect />
         {/* <BottomNav dark={dark} data-test-id="side-nav-bottom-links">
           <a

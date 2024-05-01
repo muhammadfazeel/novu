@@ -30,7 +30,7 @@ export const getOutlineStyles = (theme) => {
     background: `${dark ? getGradient(colors.B17) : getGradient(colors.white)} padding-box, ${
       colors.horizontal
     } border-box`,
-    color: dark ? theme.white : 'transparent',
+    color: 'black',
     boxShadow: dark ? shadows.dark : shadows.medium,
   };
 };

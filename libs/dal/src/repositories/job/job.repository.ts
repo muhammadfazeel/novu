@@ -51,9 +51,11 @@ export class JobRepository extends BaseRepository<JobDBModel, JobEntity, Enforce
     const setObject = {
       status,
     };
-    if (status === JobStatusEnum.COMPLETED || status === JobStatusEnum.FAILED) {
-      setObject['payload.userInfoObject'] = null;
-    }
+    /*
+     * if (status === JobStatusEnum.COMPLETED || status === JobStatusEnum.FAILED) {
+     *   setObject['payload.userInfoObject'] = null;
+     * }
+     */
 
     return this.MongooseModel.updateOne(
       {

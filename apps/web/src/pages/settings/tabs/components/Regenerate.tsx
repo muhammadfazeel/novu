@@ -56,4 +56,6 @@ const Title = styled(Text)`
   padding-bottom: 17px;
   font-size: 20px;
   font-weight: 700;
+  border-color: #b89535 !important;
+  // color: #b89535 !important;
 `;

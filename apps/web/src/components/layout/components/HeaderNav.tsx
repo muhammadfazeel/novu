@@ -86,7 +86,7 @@ export function HeaderNav({ isIntercomOpened }: Props) {
     }
   }, [boot, currentUser, currentOrganization]);
 
-  let themeTitle = 'Match System Appearance';
+  let themeTitle = 'Match System Appearance1';
   if (themeStatus === 'dark') {
     themeTitle = 'Dark Theme';
   } else if (themeStatus === 'light') {
@@ -178,8 +178,17 @@ export function HeaderNav({ isIntercomOpened }: Props) {
     >
       <Container
         fluid
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', height: `${HEADER_HEIGHT}px` }}
+        style={{
+          boxShadow: '8px 3px 10px 0px #ccc',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          height: `${HEADER_HEIGHT}px`,
+        }}
       >
+        <a href="/">
+          <img src="/static/images/neom-black.png" alt="NEOM Logo" width="auto" height="80" />
+        </a>
         <Group>
           <ActionIcon variant="transparent" onClick={() => toggleColorScheme()}>
             <Tooltip label={themeTitle}>

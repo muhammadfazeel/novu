@@ -44,7 +44,7 @@ const Wrapper = styled.div<{ isDark: boolean }>`
 `;
 
 const StyledTitle = styled(Text)`
-  background: -webkit-linear-gradient(90deg, #dd2476 0%, #ff512f 100%);
+  background: #b89535;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 11px;

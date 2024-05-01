@@ -75,11 +75,7 @@ const Wrapper = styled.div<{ colorScheme: ColorScheme; showFeed: boolean; select
   ${({ selectedItem, colorScheme }) =>
     selectedItem &&
     `
-     background: ${
-       colorScheme === 'dark'
-         ? `linear-gradient(0deg, ${colors.B20} 0%, ${colors.B20} 100%)`
-         : `linear-gradient(0deg, ${colors.white} 0%, ${colors.white} 100%)`
-     } padding-box,
+     background:#b89535; padding-box,
     ${colors.horizontal} border-box`};
   border: 1px solid transparent;
 `;

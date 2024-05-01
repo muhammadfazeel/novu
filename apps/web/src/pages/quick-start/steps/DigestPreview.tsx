@@ -45,7 +45,7 @@ function FooterLeftSide() {
   }
 
   return (
-    <NavButton navigateTo={getStartedSteps.first} handleOnClick={handleOnClick}>
+    <NavButton className="nav-button-custom" navigateTo={getStartedSteps.first} handleOnClick={handleOnClick}>
       <ThemeArrowLeft style={{ marginRight: '10px' }} />
       <Label gradientColor={gradientColor}>Previous</Label>
     </NavButton>

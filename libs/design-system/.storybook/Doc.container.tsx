@@ -4,7 +4,7 @@ import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
 
 export const DocsContainer = ({ children, context }) => {
-  const dark = useDarkMode();
+  const dark = false;
 
   return (
     <BaseContainer
@@ -22,7 +22,8 @@ export const DocsContainer = ({ children, context }) => {
             },
           };
         },
-      }}>
+      }}
+    >
       {children}
     </BaseContainer>
   );

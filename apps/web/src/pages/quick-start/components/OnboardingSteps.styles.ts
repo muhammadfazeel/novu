@@ -29,11 +29,11 @@ export default createStyles((theme, _params, getRef) => {
     item: {
       ['&[data-active]']: {
         [`& .${getRef('itemBullet')}`]: {
-          backgroundColor: `${dark ? colors.B20 : colors.BGLight} !important`,
+          backgroundColor: '#b89535',
           boxShadow: dark ? shadows.dark : shadows.medium,
         },
         [`& .${getRef('itemBody')}`]: {
-          backgroundColor: `${dark ? colors.B20 : colors.BGLight} !important`,
+          backgroundColor: '#b89535',
           boxShadow: dark ? shadows.dark : shadows.medium,
         },
         [`& .${getRef('itemBulletWithChild')}`]: {
